@@ -17,3 +17,4 @@ C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Pe
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Persistence\obj\Debug\net8.0\QuickBite.Persistence.pdb
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Persistence\obj\Debug\net8.0\QuickBite.Persistence.genruntimeconfig.cache
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Persistence\obj\Debug\net8.0\ref\QuickBite.Persistence.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Persistence\obj\Debug\net8.0\QuickBite.Persistence.sourcelink.json

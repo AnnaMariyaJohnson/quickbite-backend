@@ -13,3 +13,4 @@ C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Ap
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\refint\QuickBite.Application.dll
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.pdb
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\ref\QuickBite.Application.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.sourcelink.json

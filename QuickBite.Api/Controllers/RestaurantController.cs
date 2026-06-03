@@ -67,6 +67,8 @@ public class RestaurantController:ControllerBase
         restaurant.Name=updatedRestaurant.Name;
         restaurant.Address=updatedRestaurant.Address;
         restaurant.Description=updatedRestaurant.Description;
+        restaurant.ImageUrl=updatedRestaurant.ImageUrl;
+        restaurant.Rating=updatedRestaurant.Rating;
         _context.SaveChanges();
         return Ok(new
         {

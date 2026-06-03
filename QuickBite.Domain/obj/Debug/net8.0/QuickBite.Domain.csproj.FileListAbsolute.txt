@@ -9,3 +9,4 @@ C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Do
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\refint\QuickBite.Domain.dll
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\QuickBite.Domain.pdb
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\ref\QuickBite.Domain.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\QuickBite.Domain.sourcelink.json

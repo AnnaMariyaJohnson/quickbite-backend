@@ -83,6 +83,9 @@ public class MenuController : ControllerBase
         item.Name = updatedItem.Name;
         item.Price = updatedItem.Price;
         item.Description = updatedItem.Description;
+        item.ImageUrl = updatedItem.ImageUrl;
+        item.IsVeg = updatedItem.IsVeg;
+        item.Category = updatedItem.Category;
 
         _context.SaveChanges();
 
