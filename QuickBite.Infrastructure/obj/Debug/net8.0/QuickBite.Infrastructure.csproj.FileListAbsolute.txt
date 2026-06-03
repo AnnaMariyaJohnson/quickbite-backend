@@ -1,0 +1,17 @@
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\bin\Debug\net8.0\QuickBite.Infrastructure.deps.json
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\bin\Debug\net8.0\QuickBite.Infrastructure.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\bin\Debug\net8.0\QuickBite.Infrastructure.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\bin\Debug\net8.0\QuickBite.Application.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\bin\Debug\net8.0\QuickBite.Domain.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\bin\Debug\net8.0\QuickBite.Application.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\bin\Debug\net8.0\QuickBite.Domain.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\QuickBite.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\QuickBite.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\QuickBite.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\QuickBite.Infrastructure.AssemblyInfo.cs
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\QuickBite.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\QuickBit.D3452061.Up2Date
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\QuickBite.Infrastructure.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\refint\QuickBite.Infrastructure.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\QuickBite.Infrastructure.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Infrastructure\obj\Debug\net8.0\ref\QuickBite.Infrastructure.dll

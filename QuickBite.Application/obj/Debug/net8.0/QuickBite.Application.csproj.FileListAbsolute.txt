@@ -1,0 +1,15 @@
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\bin\Debug\net8.0\QuickBite.Application.deps.json
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\bin\Debug\net8.0\QuickBite.Application.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\bin\Debug\net8.0\QuickBite.Application.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\bin\Debug\net8.0\QuickBite.Domain.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\bin\Debug\net8.0\QuickBite.Domain.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.csproj.AssemblyReference.cache
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.AssemblyInfoInputs.cache
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.AssemblyInfo.cs
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.csproj.CoreCompileInputs.cache
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBit.99AFBA29.Up2Date
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\refint\QuickBite.Application.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\QuickBite.Application.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Application\obj\Debug\net8.0\ref\QuickBite.Application.dll

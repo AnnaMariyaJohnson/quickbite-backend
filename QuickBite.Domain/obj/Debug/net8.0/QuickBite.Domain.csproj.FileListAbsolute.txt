@@ -1,0 +1,11 @@
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\bin\Debug\net8.0\QuickBite.Domain.deps.json
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\bin\Debug\net8.0\QuickBite.Domain.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\bin\Debug\net8.0\QuickBite.Domain.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\QuickBite.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\QuickBite.Domain.AssemblyInfoInputs.cache
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\QuickBite.Domain.AssemblyInfo.cs
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\QuickBite.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\QuickBite.Domain.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\refint\QuickBite.Domain.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\QuickBite.Domain.pdb
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Domain\obj\Debug\net8.0\ref\QuickBite.Domain.dll

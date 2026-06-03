@@ -1,0 +1,79 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using QuickBite.Application.DTOs.Order;
+using QuickBite.Domain.Entities;
+using QuickBite.Persistence.DbContext;
+using System.Security.Claims;
+
+namespace QuickBite.Api.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+[Authorize]
+public class OrdersController : ControllerBase
+{
+    private readonly ApplicationDbContext _context;
+
+    public OrdersController(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpPost]
+    public IActionResult CreateOrder(CreateOrderRequest request)
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        var order = new Order
+        {
+            Id = Guid.NewGuid(),
+            UserId = Guid.Parse(userId!),
+            TotalAmount = request.TotalAmount,
+            CreatedAt = DateTime.UtcNow
+        };
+
+        _context.Orders.Add(order);
+        _context.SaveChanges();
+
+        return Ok(order);
+    }
+
+    [HttpGet]
+    public IActionResult GetMyOrders()
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        var orders = _context.Orders
+            .Where(x => x.UserId == Guid.Parse(userId!))
+            .OrderByDescending(x => x.CreatedAt)
+            .ToList();
+
+        return Ok(orders);
+    }
+    [HttpGet("{id}")]
+    public IActionResult GetById(Guid id)
+    {
+        var order = _context.Orders
+            .FirstOrDefault(o => o.Id == id);
+
+        if(order == null)
+            return NotFound();
+
+        return Ok(order);
+    }
+    [Authorize]
+    [HttpGet("my-orders")]
+    public IActionResult MyOrders()
+    {
+        var userId = Guid.Parse(
+            User.FindFirst(ClaimTypes.NameIdentifier)?.Value!
+        );
+
+        var orders = _context.Orders
+            .Where(o => o.UserId == userId)
+            .OrderByDescending(o => o.CreatedAt)
+            .ToList();
+
+        return Ok(orders);
+    }
+}
