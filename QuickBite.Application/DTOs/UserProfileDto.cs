@@ -1,6 +1,6 @@
-namespace QucikBite.Apllication.DTOs;
+namespace QuickBite.Application.DTOs;
 
-public class UserProfileDTOs
+public class UserProfileDto
 {
     public Guid Id {get; set;}
     public string FullName {get; set;}=string.Empty;

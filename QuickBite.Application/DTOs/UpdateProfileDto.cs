@@ -1,4 +1,4 @@
-namespace QucikBite.Application.DTOs;
+namespace QuickBite.Application.DTOs;
 
 public class UpdateProfileDto
 {

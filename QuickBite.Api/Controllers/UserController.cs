@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using QuickBite.Application.DTOs;
 using QuickBite.Persistence.DbContext;
@@ -54,9 +54,9 @@ public class UserController:ControllerBase
     //PUT: api/User/profile
     [HttpPut("profile")]
     public IActionResult UpdateProfile(
-        UpdateProfileRequest request)
+        UpdateProfileDto request)
         {
-            var userId=User.FindFirst(ClaimTypes.NameIdentifier)?.Vlaue;
+            var userId=User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
             if(userId==null)
             {
