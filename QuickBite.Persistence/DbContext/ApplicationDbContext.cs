@@ -20,4 +20,5 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
             .HasPrecision(18, 2);
     }
     public DbSet<Order> Orders { get; set; }
+    public DbSet<Address> Addresses=>Set<Address>();
 }
