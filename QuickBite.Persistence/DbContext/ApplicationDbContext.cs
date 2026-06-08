@@ -10,11 +10,12 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
         : base(options)
         {
         }
-    public DbSet<User>Users => Set<User>();
+    public DbSet<User> Users => Set<User>();
     public DbSet<Restaurant> Restaurants=>Set<Restaurant>();
-    public DbSet<MenuItem>MenuItems=>Set<MenuItem>();
+    public DbSet<MenuItem> MenuItems=>Set<MenuItem>();
     public DbSet<Order> Orders { get; set; }
     public DbSet<Address> Addresses=>Set<Address>();
+    public DbSet<Favorite> Favorites=>Set<Favorite>();
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MenuItem>()
