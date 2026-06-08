@@ -11,4 +11,7 @@ public class Order
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public User User { get; set; } = null!;
+
+    public Guid AddressId { get; set; }
+    public string DeliveryAddress { get; set; } = string.Empty; 
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuickBite.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2aa9df9d11bf3d8adf4929972b82f7190008f28a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a1dabcf059b307dba88ac0aa32a587d21186ba9")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuickBite.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuickBite.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

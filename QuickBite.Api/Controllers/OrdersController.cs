@@ -29,6 +29,8 @@ public class OrdersController : ControllerBase
             Id = Guid.NewGuid(),
             UserId = Guid.Parse(userId!),
             TotalAmount = request.TotalAmount,
+            AddressId = request.AddressId,
+            DeliveryAddress = request.DeliveryAddress,
             CreatedAt = DateTime.UtcNow
         };
 
