@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using QuickBite.Domain.Entities;
 using QuickBite.Persistence.DbContext;
@@ -9,7 +10,7 @@ public class FavoritesController: ControllerBase
 {
     private readonly ApplicationDbContext _context;
     public FavoritesController(
-        ApplicatioDbContext context)
+        ApplicationDbContext context)
         {
             _context =context;
         }
@@ -19,17 +20,18 @@ public class FavoritesController: ControllerBase
         public IActionResult GetUserFavorites(Guid userId)
         {
             var favorites = _context.Favorites
-                .where(f=> f.UserId == userId)
+                .Where(f=> f.UserId == userId)
                 .ToList();
 
             return Ok(favorites);
         }
 
+        // GET api/favorites/restaurants/{userId}
         [HttpGet("restaurants/{userId}")]
         public IActionResult GetFavoriteRestaurants(Guid userId)
         {
             var restaurants = _context.Favorites
-                .where(f=>
+                .Where(f=>
                     f.UserId==userId &&
                     f.RestaurantId !=null)
                 .Join(
@@ -49,11 +51,12 @@ public class FavoritesController: ControllerBase
             return Ok(restaurants);
         }
 
+    // GET api/favorites/menuItems/{userId}
         [HttpGet("menuItems/{userId}")]
-        publ;ic IActionResult GetFavoriteMenuItems(Guid userId)
+        public IActionResult GetFavoriteMenuItems(Guid userId)
         {
             var menuItems =_context.Favorites
-                .where(f=>
+                .Where(f=>
                     f.UserId==userId &&
                     f.MenuItemId != null)
                 .Join(
@@ -73,22 +76,54 @@ public class FavoritesController: ControllerBase
             return Ok(menuItems);
         }
 
-        //POST api/favorites
+        // POST api/favorites
         [HttpPost]
-        public IActionResult AddFavorite(
-            Favorite favorite)
+        public IActionResult AddFavorite(Favorite favorite)
+        {
+            if (favorite.UserId == Guid.Empty)
             {
-                favorite.Id = guid.NewGuid();
-                _context.Favorites.Add(favorite);
-                _context.SaveChanges();
-
-                return Ok(new
+                return BadRequest(new
                 {
-                    Message = "Added to favorites"
+                    Message = "Invalid UserId"
                 });
             }
 
-        //DELETE api/favorite/{id}
+            if (favorite.RestaurantId == null &&
+                favorite.MenuItemId == null)
+            {
+                return BadRequest(new
+                {
+                    Message = "RestaurantId or MenuItemId is required"
+                });
+            }
+
+            var exists = _context.Favorites.Any(f =>
+                f.UserId == favorite.UserId &&
+                (
+                    f.RestaurantId == favorite.RestaurantId ||
+                    f.MenuItemId == favorite.MenuItemId
+                ));
+
+            if (exists)
+            {
+                return BadRequest(new
+                {
+                    Message = "Already in favorites"
+                });
+            }
+
+            favorite.Id = Guid.NewGuid();
+
+            _context.Favorites.Add(favorite);
+            _context.SaveChanges();
+
+            return Ok(new
+            {
+                Message = "Added to favorites"
+            });
+        }
+
+        // DELETE api/favorites/{id}
         [HttpDelete("{id}")]
         public IActionResult RemoveFavorite(Guid id)
         {
@@ -99,7 +134,7 @@ public class FavoritesController: ControllerBase
             {
                 return NotFound(new
                 {
-                    Message="Favorite not found"
+                    Message = "Favorite not found"
                 });
             }
 
@@ -108,7 +143,7 @@ public class FavoritesController: ControllerBase
 
             return Ok(new
             {
-                Message="Removed from favorites"
-            })
+                Message = "Removed from favorites"
+            });
         }
 }
