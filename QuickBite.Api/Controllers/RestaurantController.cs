@@ -96,4 +96,43 @@ public class RestaurantController:ControllerBase
             Message="Restaurant deleted successfully"
         });
     }
+
+    //GET: api/restaurant/search-all?query=pizza
+    [HttpGet("search-all")]
+    public IActionResult SearchAll(string query)
+    {
+        if(string.IsNullOrWhiteSpace(query))
+        {
+            return Ok(new List<object>());
+        }
+
+        var restaurantResults = _context.Restaurants
+            .Where(r=>
+                r.Name.Contains(query) ||
+                r.Description.Contains(query))
+            .Select(r=>new
+            {
+                Type="restaurant",
+                Restaurant = r
+            });
+        
+        var menuResults = _context.MenuItems
+            .Include(m=>m.Restaurant)
+            .Where(m=>
+                m.Name.Contains(query) ||
+                m.Description.Contains(query))
+            .Select(m=>new
+            {
+                Type="dish",
+                Restaurant=m.Restaurant,
+                Dish=m
+            });
+
+        var results=restaurantResults
+            .Cast<object>()
+            .Concat(menuResults.Cast<object>())
+            .ToList();
+
+        return Ok(results);
+    }
 }
