@@ -40,6 +40,27 @@ public class MenuController : ControllerBase
         return Ok(item);
     }
 
+    //GET:api/menu/categories
+    [HttpGet("categories")]
+    public IActionResult GetCategories()
+    {
+        var categories = _context.MenuItems
+            .Select(m=>m.Category)
+            .Distinct()
+            .ToList();
+        return Ok(categories);
+    }
+
+    //GET:api/menu/category/Pizza
+    [HttpGet("category/{category}")]
+    public IActionResult GetByCategory(string category)
+    {
+        var items= _context.MenuItems
+            .Where(m=>m.Category == category)
+            .ToList();
+        return Ok(items);
+    }
+
     // GET: api/Menu/restaurant/{restaurantId}
     [HttpGet("restaurant/{restaurantId}")]
     public IActionResult GetByRestaurant(Guid restaurantId)

@@ -135,4 +135,15 @@ public class RestaurantController:ControllerBase
 
         return Ok(results);
     }
+
+    //GET: api/restaurant/category/pizza
+    [HttpGet("category/{category}")]
+    public IActionResult GetRestaurantByCategory(string category)
+    {
+       var restaurants = _context.Restaurants
+        .Include(r => r.MenuItems)
+        .Where(r => r.MenuItems.Any(m => m.Category == category))
+        .ToList();
+        return Ok(restaurants);
+    }
 }
