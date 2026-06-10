@@ -7,4 +7,7 @@ public class CreateOrderRequest
     public Guid AddressId { get; set; }
 
     public string DeliveryAddress { get; set; } = string.Empty;
+
+    public List<OrderItemRequest> Items { get; set; }
+        = new();
 }

@@ -17,4 +17,7 @@ public class Order
     public string DeliveryAddress { get; set; } = string.Empty; 
     
     public string Status {get;set;} = "OrderPlaced";
+
+    public ICollection<OrderItem> OrderItems { get; set;} =
+        new List<OrderItem>();
 }

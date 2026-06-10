@@ -4,6 +4,7 @@ using QuickBite.Application.DTOs.Order;
 using QuickBite.Domain.Entities;
 using QuickBite.Persistence.DbContext;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace QuickBite.Api.Controllers;
 
@@ -36,6 +37,18 @@ public class OrdersController : ControllerBase
         };
 
         _context.Orders.Add(order);
+
+        foreach(var item in request.Items)
+        {
+            _context.OrderItems.Add(new OrderItem
+            {
+                Id = Guid.NewGuid(),
+                OrderId= order.Id,
+                MenuItemId = item.MenuItemId,
+                Quantity= item.Quantity,
+                Price=item.Price
+            });
+        }
         _context.SaveChanges();
 
         return Ok(order);
@@ -53,17 +66,38 @@ public class OrdersController : ControllerBase
 
         return Ok(orders);
     }
+
     [HttpGet("{id}")]
     public IActionResult GetById(Guid id)
     {
         var order = _context.Orders
+            .Include(o=>o.OrderItems)
+            .ThenInclude(oi=>oi.MenuItem)
             .FirstOrDefault(o => o.Id == id);
 
         if(order == null)
             return NotFound();
 
-        return Ok(order);
+        return Ok(new
+        {
+            order.Id,
+            order.TotalAmount,
+            order.Status,
+            order.CreatedAt,
+            order.DeliveryAddress,
+            order.UserId,
+
+            OrderItems = order.OrderItems.Select(x => new
+            {
+                x.Id,
+                x.Quantity,
+                x.Price,
+                MenuItemName = x.MenuItem.Name
+                MenuItemImage= x.MenuItem.ImagUrl
+            })
+        });
     }
+
     [Authorize]
     [HttpGet("my-orders")]
     public IActionResult MyOrders()

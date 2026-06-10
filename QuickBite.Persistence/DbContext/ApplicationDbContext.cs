@@ -16,6 +16,7 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Order> Orders { get; set; }
     public DbSet<Address> Addresses=>Set<Address>();
     public DbSet<Favorite> Favorites=>Set<Favorite>();
+    public DbSet<OrderItem> OrderItems{get; set;}
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MenuItem>()
@@ -25,5 +26,15 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
          modelBuilder.Entity<Order>()
         .Property(x => x.TotalAmount)
         .HasPrecision(18, 2);
+
+        modelBuilder.Entity<OrderItem>()
+        .HasOne(oi => oi.Order)
+        .WithMany(o => o.OrderItems)
+        .HasForeignKey(oi => oi.OrderId);
+
+    modelBuilder.Entity<OrderItem>()
+        .HasOne(oi => oi.MenuItem)
+        .WithMany()
+        .HasForeignKey(oi => oi.MenuItemId);
     }
 }
