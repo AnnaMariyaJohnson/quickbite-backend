@@ -51,7 +51,16 @@ public class OrdersController : ControllerBase
         }
         _context.SaveChanges();
 
-        return Ok(order);
+        return Ok(new
+        {
+            order.Id,
+            order.TotalAmount,
+            order.Status,
+            order.CreatedAt,
+            order.DeliveryAddress,
+            order.UserId,
+            order.AddressId,
+        });
     }
 
     [HttpGet]

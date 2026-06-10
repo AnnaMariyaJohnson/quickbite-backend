@@ -24,13 +24,17 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
             .HasPrecision(18, 2);
 
          modelBuilder.Entity<Order>()
-        .Property(x => x.TotalAmount)
-        .HasPrecision(18, 2);
+            .Property(x => x.TotalAmount)
+            .HasPrecision(18, 2);
 
         modelBuilder.Entity<OrderItem>()
-        .HasOne(oi => oi.Order)
-        .WithMany(o => o.OrderItems)
-        .HasForeignKey(oi => oi.OrderId);
+            .Property(x => x.Price)
+            .HasPrecision(18, 2);
+
+        modelBuilder.Entity<OrderItem>()
+            .HasOne(oi => oi.Order)
+            .WithMany(o => o.OrderItems)
+            .HasForeignKey(oi => oi.OrderId);
 
     modelBuilder.Entity<OrderItem>()
         .HasOne(oi => oi.MenuItem)
