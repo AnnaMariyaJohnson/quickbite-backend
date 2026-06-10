@@ -97,6 +97,22 @@ public class OrdersController : ControllerBase
             });
         }
 
+        var validStatuses=new[]
+        {
+            "OrderPlaced",
+            "Preparing",
+            "OutForDelivery",
+            "Delivered",
+            "Cancelled"
+        };
+        if(!validStatuses.Contains(status))
+        {
+            return BadRequest(new
+            {
+                Message="Invalid status"
+            });
+        }
+
         order.Status = status;
         _context.SaveChanges();
 
