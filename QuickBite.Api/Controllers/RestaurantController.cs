@@ -113,8 +113,17 @@ public class RestaurantController:ControllerBase
             .Select(r=>new
             {
                 Type="restaurant",
-                Restaurant = r
-            });
+                Restaurant = new
+                {
+                    r.Id,
+                    r.Name,
+                    r.Address,
+                    r.Description,
+                    r.ImageUrl,
+                    r.Rating,
+                }
+            })
+            .ToList();
         
         var menuResults = _context.MenuItems
             .Include(m=>m.Restaurant)
@@ -124,8 +133,25 @@ public class RestaurantController:ControllerBase
             .Select(m=>new
             {
                 Type="dish",
-                Restaurant=m.Restaurant,
-                Dish=m
+                Restaurant=new
+                {
+                    m.Restaurant.Id,
+                    m.Restaurant.Name,
+                    m.Restaurant.Address,
+                    m.Restaurant.Description,
+                    m.Restaurant.ImageUrl,
+                    m.Restaurant.Rating,
+                },
+                Dish=new
+                {
+                    m.Id,
+                    m.Name,
+                    m.Description,
+                    m.Price,
+                    m.ImageUrl,
+                    m.Category,
+                    m.IsVeg
+                }
             });
 
         var results=restaurantResults
@@ -143,6 +169,15 @@ public class RestaurantController:ControllerBase
        var restaurants = _context.Restaurants
         .Include(r => r.MenuItems)
         .Where(r => r.MenuItems.Any(m => m.Category == category))
+        .Select(r=>new
+        {
+            r.Id,
+            r.Name,
+            r.Address,
+            r.Description,
+            r.ImageUrl,
+            r.Rating,
+        })
         .ToList();
         return Ok(restaurants);
     }

@@ -31,7 +31,8 @@ public class OrdersController : ControllerBase
             TotalAmount = request.TotalAmount,
             AddressId = request.AddressId,
             DeliveryAddress = request.DeliveryAddress,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            Status = "OrderPlaced"
         };
 
         _context.Orders.Add(order);
@@ -77,5 +78,32 @@ public class OrdersController : ControllerBase
             .ToList();
 
         return Ok(orders);
+    }
+
+    [HttpPut("{id}/status")]
+    public IActionResult UpdateOrderStatus(
+        Guid id,
+        [FromQuery] string status
+    )
+    {
+        var order = _context.Orders
+            .FirstOrDefault(o => o.Id == id);
+
+        if (order == null)
+        {
+            return NotFound(new
+            {
+                Message = "Order not found"
+            });
+        }
+
+        order.Status = status;
+        _context.SaveChanges();
+
+        return Ok(new
+        {
+            Message = "Order status updated successfully",
+            order.Status
+        });
     }
 }

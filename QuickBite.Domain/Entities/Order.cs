@@ -13,5 +13,8 @@ public class Order
     public User User { get; set; } = null!;
 
     public Guid AddressId { get; set; }
+
     public string DeliveryAddress { get; set; } = string.Empty; 
+    
+    public string Status {get;set;} = "OrderPlaced";
 }
