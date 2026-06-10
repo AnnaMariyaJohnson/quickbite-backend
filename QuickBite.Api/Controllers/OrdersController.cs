@@ -92,8 +92,8 @@ public class OrdersController : ControllerBase
                 x.Id,
                 x.Quantity,
                 x.Price,
-                MenuItemName = x.MenuItem.Name
-                MenuItemImage= x.MenuItem.ImagUrl
+                MenuItemName = x.MenuItem?.Name,
+                MenuItemImage= x.MenuItem?.ImageUrl
             })
         });
     }
