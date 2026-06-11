@@ -17,6 +17,7 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Address> Addresses=>Set<Address>();
     public DbSet<Favorite> Favorites=>Set<Favorite>();
     public DbSet<OrderItem> OrderItems{get; set;}
+    public DbSet<Notification> Notifications => Set<Notification>();
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MenuItem>()
@@ -36,9 +37,9 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
             .WithMany(o => o.OrderItems)
             .HasForeignKey(oi => oi.OrderId);
 
-    modelBuilder.Entity<OrderItem>()
-        .HasOne(oi => oi.MenuItem)
-        .WithMany()
-        .HasForeignKey(oi => oi.MenuItemId);
+        modelBuilder.Entity<OrderItem>()
+            .HasOne(oi => oi.MenuItem)
+            .WithMany()
+            .HasForeignKey(oi => oi.MenuItemId);
     }
 }

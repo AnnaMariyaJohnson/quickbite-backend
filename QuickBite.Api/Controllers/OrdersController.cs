@@ -157,6 +157,17 @@ public class OrdersController : ControllerBase
         }
 
         order.Status = status;
+        _context.Notifications.Add(
+            new Notification
+            {
+                Id=Guid.NewGuid(),
+                UserId=order.UserId,
+                Title="Order Update",
+                Message=$"Your order is now {status}",
+                IsRead=false,
+                CreatedAt=DateTime.UtcNow
+            }
+        );
         _context.SaveChanges();
 
         return Ok(new
