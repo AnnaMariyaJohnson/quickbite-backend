@@ -176,4 +176,47 @@ public class OrdersController : ControllerBase
             order.Status
         });
     }
+
+    [HttpPut("{id}/cancel")]
+    public IActionResult CancelOrder(Guid id)
+    {
+        var order = _context.Orders
+            .FirstOrDefault(o => o.Id == id);
+
+        if (order == null)
+        {
+            return NotFound(new
+            {
+                Message = "Order not found"
+            });
+        }
+
+        if (order.Status == "Delivered")
+        {
+            return BadRequest(new
+            {
+                Message = "Delivered orders cannot be cancelled"
+            });
+        }
+
+        order.Status = "Cancelled";
+        _context.Notifications.Add(
+            new Notification
+            {
+                Id=Guid.NewGuid(),
+                UserId=order.UserId,
+                Title="Order Cancelled",
+                Message="Your order has been cancelled",
+                IsRead=false,
+                CreatedAt=DateTime.UtcNow
+            }
+        );
+        _context.SaveChanges();
+
+        return Ok(new
+        {
+            Message = "Order cancelled successfully",
+            order.Status
+        });
+    }
 }

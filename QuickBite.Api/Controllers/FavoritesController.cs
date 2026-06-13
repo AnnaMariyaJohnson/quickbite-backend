@@ -97,12 +97,20 @@ public class FavoritesController: ControllerBase
                 });
             }
 
-            var exists = _context.Favorites.Any(f =>
-                f.UserId == favorite.UserId &&
-                (
-                    f.RestaurantId == favorite.RestaurantId ||
-                    f.MenuItemId == favorite.MenuItemId
-                ));
+            bool exists = false;
+
+            if (favorite.RestaurantId != null)
+            {
+                exists = _context.Favorites.Any(f =>
+                    f.UserId == favorite.UserId &&
+                    f.RestaurantId == favorite.RestaurantId);
+            }
+            else if (favorite.MenuItemId != null)
+            {
+                exists = _context.Favorites.Any(f =>
+                    f.UserId == favorite.UserId &&
+                    f.MenuItemId == favorite.MenuItemId);
+            }
 
             if (exists)
             {
