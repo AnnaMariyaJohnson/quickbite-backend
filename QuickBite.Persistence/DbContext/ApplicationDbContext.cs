@@ -18,6 +18,7 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Favorite> Favorites=>Set<Favorite>();
     public DbSet<OrderItem> OrderItems{get; set;}
     public DbSet<Notification> Notifications => Set<Notification>();
+    public DbSet<Review> Reviews => Set<Review>();
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MenuItem>()
@@ -41,5 +42,15 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
             .HasOne(oi => oi.MenuItem)
             .WithMany()
             .HasForeignKey(oi => oi.MenuItemId);
+
+        modalBuilder.Entity<Review>()
+            .HasOne(r=>r.User)
+            .withMany()
+            .HasForeignKey(r=>r.UserId);
+
+        modalBuilder.Entity<Review>()
+            .HasOne(r=>r.Restaurant)
+            .withMany()
+            .HasForeignKey(r=>r.RestaurantId);
     }
 }
