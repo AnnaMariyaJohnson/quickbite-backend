@@ -45,12 +45,12 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
 
         modalBuilder.Entity<Review>()
             .HasOne(r=>r.User)
-            .withMany()
+            .WithMany()
             .HasForeignKey(r=>r.UserId);
 
         modalBuilder.Entity<Review>()
             .HasOne(r=>r.Restaurant)
-            .withMany()
+            .WithMany()
             .HasForeignKey(r=>r.RestaurantId);
     }
 }

@@ -6,13 +6,13 @@ using QuickBite.Domain.Entities;
 using QuickBite.Persistence.DbContext;
 using System.Security.Claims;
 
-namspace QuickBite.Api.Controllers;
+namespace QuickBite.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class ReviewsController: ControllerBase
 {
-    private Readonly ApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
 
     public ReviewsController(
         ApplicationDbContext context)
@@ -29,6 +29,27 @@ public class ReviewsController: ControllerBase
                 ClaimTypes.NameIdentifier
             )!.Value
         );
+
+        if(request.Rating<1 || request.Rating >5)
+        {
+            return BadRequest(new
+            {
+                Message="Rating must be between 1 and 5"
+            });
+        }
+
+        var existingReview=_context.Reviews
+            .FirstOrDeafault(r=>
+                r.UserId==userId &&
+                r.RestaurantId==request.RestaurantId);
+        if(existingReiew != null)
+        {
+            return BadRequest(new
+            {
+                Message="You have already reviewed this restaurant"
+            });
+        }
+
         var review = new Review
         {
             Id = Guid.NewGuid(),
@@ -72,16 +93,17 @@ public class ReviewsController: ControllerBase
     public IActionResult GetAverageRating(
         Guid restaurantId)
     {
-        var average = _context.Reviews
-            .Where(r =>
-                r.RestaurantId == restaurantId)
-            .Average(r =>
-                (double?)r.Rating) ?? 0;
+        var reviews = _context.Reviews
+            .Where(r=>r.RestaurantId == restaurantId);
+        
+        var average=reviews
+            .Average(r=>(double?)r.Rating) ?? 0;
+        var count = reviews.Count();
 
         return Ok(new
         {
-            AverageRating =
-                Math.Round(average, 1)
+            AverageRating = Math.Round(average,1),
+            ReviewsCount=count
         });
     }
 }
