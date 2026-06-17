@@ -96,6 +96,11 @@ public class OrdersController : ControllerBase
             order.DeliveryAddress,
             order.UserId,
 
+            RestaurantId=order.OrderItems
+                .FirstOrDefault()?
+                .MenuItem?
+                .RestaurantId,
+
             OrderItems = order.OrderItems.Select(x => new
             {
                 x.Id,
@@ -104,6 +109,7 @@ public class OrdersController : ControllerBase
                 MenuItemName = x.MenuItem?.Name,
                 MenuItemImage= x.MenuItem?.ImageUrl
             })
+            
         });
     }
 
