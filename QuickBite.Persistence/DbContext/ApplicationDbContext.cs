@@ -43,12 +43,12 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
             .WithMany()
             .HasForeignKey(oi => oi.MenuItemId);
 
-        modalBuilder.Entity<Review>()
+        modelBuilder.Entity<Review>()
             .HasOne(r=>r.User)
             .WithMany()
             .HasForeignKey(r=>r.UserId);
 
-        modalBuilder.Entity<Review>()
+        modelBuilder.Entity<Review>()
             .HasOne(r=>r.Restaurant)
             .WithMany()
             .HasForeignKey(r=>r.RestaurantId);

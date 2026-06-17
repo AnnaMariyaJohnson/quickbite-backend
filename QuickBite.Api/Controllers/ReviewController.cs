@@ -39,10 +39,10 @@ public class ReviewsController: ControllerBase
         }
 
         var existingReview=_context.Reviews
-            .FirstOrDeafault(r=>
+            .FirstOrDefault(r=>
                 r.UserId==userId &&
                 r.RestaurantId==request.RestaurantId);
-        if(existingReiew != null)
+        if(existingReview != null)
         {
             return BadRequest(new
             {
@@ -82,7 +82,7 @@ public class ReviewsController: ControllerBase
                 r.Rating,
                 r.Comment,
                 r.CreatedAt,
-                UserName = r.User!.Name
+                UserName = r.User!.FullName
             })
             .ToList();
 

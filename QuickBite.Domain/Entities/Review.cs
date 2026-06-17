@@ -8,5 +8,5 @@ public class Review
     public string Comment{get; set;}=string.Empty;
     public DateTime CreatedAt {get; set;}
     public User ? User {get; set;}
-    public Restaurant? Restaurant {get; set;}
+    public Restaurant? Restaurant { get; set; }
 }
