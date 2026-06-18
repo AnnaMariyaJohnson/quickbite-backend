@@ -41,7 +41,7 @@ public class SupportController:ControllerBase
     }
 
     [HttpGet]
-    public IActionResult MyTicket()
+    public IActionResult GetMyTickets()
     {
         var userId = Guid.Parse(
             User.FindFirst(
