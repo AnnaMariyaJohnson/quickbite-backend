@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuickBite.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abff7201b41662e99d0d9f36719638aa0f9c8d55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f6c3ced2bc4245a58d146f244142a6264e22921")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuickBite.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuickBite.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
