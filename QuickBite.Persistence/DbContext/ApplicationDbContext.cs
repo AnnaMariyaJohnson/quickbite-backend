@@ -20,6 +20,7 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Notification> Notifications => Set<Notification>();
     public DbSet<Review> Reviews => Set<Review>();
     public DbSet<SupportTicket> SupportTickets => Set<SupportTicket>();
+    public DbSet<Payment> Payments => Set<Payment>();
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MenuItem>()
@@ -58,5 +59,9 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
             .HasOne(x => x.User)
             .WithMany()
             .HasForeignKey(x => x.UserId);
+
+        modelBuilder.Entity<Payment>()
+            .Property(x => x.Amount)
+            .HasPrecision(18, 2);
     }
 }

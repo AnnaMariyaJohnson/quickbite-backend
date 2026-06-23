@@ -153,3 +153,6 @@ C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Ap
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Api\bin\Debug\net8.0\BCrypt-Net-Next.dll
 C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Api\obj\Debug\net8.0\QuickBite.Api.sourcelink.json
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Api\bin\Debug\net8.0\BouncyCastle.Crypto.dll
+C:\Users\Jowel\OneDrive\Desktop\Ammu\Work\Project\quickbite-backend\QuickBite.Api\bin\Debug\net8.0\Razorpay.dll
